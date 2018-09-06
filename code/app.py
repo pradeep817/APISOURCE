@@ -361,3 +361,4 @@ if __name__=='__main__':
     api.add_resource(Cities, '/cities')
     api.add_resource(Update_user, '/update_reporter')
     app.run(debug=True)
+    
