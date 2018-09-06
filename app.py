@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,render_template
 from flask_restful import Resource,Api,reqparse
 from flask_mysqldb import MySQL
 from passlib.hash import pbkdf2_sha256 as sha256
@@ -54,8 +54,7 @@ country=[]
 
 @app.route('/')
 def mani():
-    print("hello")
-    return "Hello"
+    return render_template('login.html')
 
 
 class Add_Reporter(Resource):

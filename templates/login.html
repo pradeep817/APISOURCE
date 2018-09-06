@@ -1,0 +1,180 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<style>
+.main_container{
+    height: 100%;
+}
+.login-image{
+   margin: 0px;
+   padding: 0px;
+}
+.login-image img{
+   display: block;
+   margin: auto;
+}
+.login-content{
+    background-color: #f3fbfe;
+    margin: 0px;
+    padding: 0px;
+    overflow-y:scroll;
+}
+.mdl-grid{
+    padding: 0px;
+    height: 100%;
+}
+.mdl-cell{
+    margin: 0px;
+}
+.mdl-cell--6-col {
+    width: 50%;  
+}
+.login-image{
+    display: block;
+    margin: auto;
+}
+.login-reg-btn{
+    text-align: center;
+}
+.login-title{
+    font-size: 35px;
+    color: black;
+    margin: 10px;
+    font-family: 'PT sans', 'Helvetica', 'Arial', sans-serif;
+}
+.login-heading{
+    font-size: 19px;
+    color: black;
+    margin: 10px;
+    font-family: 'PT sans', 'Helvetica', 'Arial', sans-serif;
+}
+.mdl-tabs{
+    margin-top: 80px;
+}
+.mdl-tabs a{
+    font-size: 20px;
+    font-family: 'PT sans', 'Helvetica', 'Arial', sans-serif;
+}
+.mdl-tabs__tab-bar{
+    color: transparent;
+    border-bottom: 1px solid transparent;
+}
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after{
+background: #6ebcf9 !important;
+}
+ .mdl-textfield{
+     margin: 10px;
+    width: 220px;
+    
+}
+.mdl-tabs__panel{
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 50px;
+}
+.mdl-tabs__panel p{
+    text-align: left;
+}
+
+.mdl-button{
+    background: #6ebcf9 !important;
+    color: white;
+}
+.reg-btn{
+    width: 50%;
+    display: block;
+    margin: auto;
+    background: #6ebcf9 !important;
+    color: white;
+    text-align: center;
+
+}
+.mdl-textfield__label:after {
+ background-color: #6ebcf9 !important;
+ color: #6ebcf9 !important;
+  } 
+.mdl-textfield__input {
+ color: #ccc !important;
+ }
+ .mdl-textfield__input:after {
+ color: #ccc !important;
+ }
+.mdl-textfield--floating-label:focus-visible{
+    color: #6ebcf9 !important;
+ }
+ul li{
+list-style: none;
+float: left;
+position: relative;
+padding-right: 40px;
+left: -30px
+
+}
+.language-speak {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.family_income_source{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.mySlides {display:none;}
+
+</style>
+{% endblock %}
+{% block body %}
+
+<div class="main_container">
+     
+      <div class="mdl-grid  main_grid">
+        <div class="login-image mdl-cell mdl-cell--6-col mdl-cell--stretch">
+      
+            <img id ="theImage" class="" src="{{url_for('static',filename='signin.svg')}}">
+
+        </div>
+
+        <div class="login-content mdl-cell mdl-cell--6-col">
+                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                        <div class="mdl-tabs__tab-bar">
+                            <a href="#starks-panel" class="mdl-tabs__tab is-active" id="login-img" onclick="singin_pictureChange()">Login</a>
+                            <a href="#lannisters-panel" class="mdl-tabs__tab" id="reg-img" onclick="singup_pictureChange()">Register</a>
+                        </div>
+
+
+                        <div class="mdl-tabs__panel is-active" id="starks-panel">
+
+                            <p class="login-title">Hello User,</p></br>
+                            <p class="login-heading">Welcome to LNI Admin, Please Login with your personal account information.</p>
+                            <form action="#">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                      <input class="mdl-textfield__input" type="text" id="sample3">
+                                      <label class="mdl-textfield__label" for="sample3">Username...</label>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="password" id="sample4">
+                                            <label class="mdl-textfield__label" for="sample4">Password...</label>
+                                    </div>
+
+                                    <div class="mdl-button mdl-js-button mdl-js-ripple-effect">Login</div>
+                            </form>  
+                        </div>
+                              <div class="mdl-tabs__panel" id="lannisters-panel">
+                                    {% include 'register.html'%}
+                              </div>
+                </div>        
+
+            <!-- <ul class="login-reg-btn mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                <li class="mdl-tabs__tab-bar is-active">Login</li>
+                <li class="mdl-button mdl-js-button">Register</li>
+            </ul>     -->
+            
+          
+        </div>
+       </div>
+       <form action="#">
+
+       </form>
+</div>
+{% endblock%}
